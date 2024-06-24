@@ -17,7 +17,7 @@ limitations under the License.
 package v1alpha1
 
 const (
-	EventSource                             = "sample-external-issuer"
+	EventSource                             = "alpha-external-issuer"
 	EventReasonCertificateRequestReconciler = "CertificateRequestReconciler"
 	EventReasonIssuerReconciler             = "IssuerReconciler"
 )

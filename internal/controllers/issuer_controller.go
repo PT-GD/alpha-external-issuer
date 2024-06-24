@@ -30,9 +30,9 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	sampleissuerapi "github.com/cert-manager/sample-external-issuer/api/v1alpha1"
-	"github.com/cert-manager/sample-external-issuer/internal/issuer/signer"
-	issuerutil "github.com/cert-manager/sample-external-issuer/internal/issuer/util"
+	sampleissuerapi "github.com/cert-manager/alpha-external-issuer/api/v1alpha1"
+	"github.com/cert-manager/alpha-external-issuer/internal/issuer/signer"
+	issuerutil "github.com/cert-manager/alpha-external-issuer/internal/issuer/util"
 )
 
 const (

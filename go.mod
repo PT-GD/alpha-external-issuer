@@ -1,4 +1,4 @@
-module github.com/cert-manager/sample-external-issuer
+module github.com/cert-manager/alpha-external-issuer
 
 go 1.20
 

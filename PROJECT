@@ -5,8 +5,8 @@
 domain: example.com
 layout:
 - go.kubebuilder.io/v3
-projectName: sample-external-issuer
-repo: github.com/cert-manager/sample-external-issuer
+projectName: alpha-external-issuer
+repo: github.com/cert-manager/alpha-external-issuer
 resources:
 - group: sample-issuer
   kind: Issuer

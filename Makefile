@@ -10,7 +10,7 @@ SHELL := bash
 VERSION ?= $(shell git describe --tags)
 # The Docker repository name, overridden in CI.
 DOCKER_REGISTRY ?= ghcr.io
-DOCKER_IMAGE_NAME ?= cert-manager/sample-external-issuer/controller
+DOCKER_IMAGE_NAME ?= cert-manager/alpha-external-issuer/controller
 # Image URL to use all building/pushing image targets
 IMG ?= ${DOCKER_REGISTRY}/${DOCKER_IMAGE_NAME}:${VERSION}
 
@@ -65,7 +65,7 @@ test: manifests generate fmt vet ## Run tests
 
 ##@ E2E testing
 
-K8S_CLUSTER_NAME := sample-external-issuer-e2e
+K8S_CLUSTER_NAME := alpha-external-issuer-e2e
 
 .PHONY: kind-cluster
 kind-cluster: ## Use Kind to create a Kubernetes cluster for E2E tests

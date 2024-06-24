@@ -21,7 +21,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	sampleissuerapi "github.com/cert-manager/sample-external-issuer/api/v1alpha1"
+	sampleissuerapi "github.com/cert-manager/alpha-external-issuer/api/v1alpha1"
 )
 
 func TestSetReadyCondition(t *testing.T) {

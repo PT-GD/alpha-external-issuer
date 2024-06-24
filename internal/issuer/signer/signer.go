@@ -6,7 +6,7 @@ import (
 
 	capi "k8s.io/api/certificates/v1beta1"
 
-	sampleissuerapi "github.com/cert-manager/sample-external-issuer/api/v1alpha1"
+	sampleissuerapi "github.com/cert-manager/alpha-external-issuer/api/v1alpha1"
 )
 
 type HealthChecker interface {

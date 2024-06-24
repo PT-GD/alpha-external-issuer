@@ -35,10 +35,10 @@ import (
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	sampleissuerv1alpha1 "github.com/cert-manager/sample-external-issuer/api/v1alpha1"
-	"github.com/cert-manager/sample-external-issuer/internal/controllers"
-	"github.com/cert-manager/sample-external-issuer/internal/issuer/signer"
-	"github.com/cert-manager/sample-external-issuer/internal/version"
+	sampleissuerv1alpha1 "github.com/cert-manager/alpha-external-issuer/api/v1alpha1"
+	"github.com/cert-manager/alpha-external-issuer/internal/controllers"
+	"github.com/cert-manager/alpha-external-issuer/internal/issuer/signer"
+	"github.com/cert-manager/alpha-external-issuer/internal/version"
 	//+kubebuilder:scaffold:imports
 )
 

@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/cert-manager/cert-manager/d53c0b9270f8cd90d908460d69502694e1838f5f/logo/logo-small.png" height="256" width="256" alt="cert-manager project logo" />
 </p>
 
-# sample-external-issuer
+# alpha-external-issuer
 
 External issuers extend [cert-manager](https://cert-manager.io/) to issue certificates using APIs and services
 which aren't built into the cert-manager core.
@@ -12,12 +12,12 @@ This repository provides an example of an [External Issuer].
 ## Install
 
 ```console
-kubectl apply -f https://github.com/cert-manager/sample-external-issuer/releases/download/v0.1.0/install.yaml
+kubectl apply -f https://github.com/cert-manager/alpha-external-issuer/releases/download/v0.1.0/install.yaml
 ```
 
 ## Demo
 
-You can run the sample-external-issuer on a local cluster with this command:
+You can run the alpha-external-issuer on a local cluster with this command:
 
 ```console
 make kind-cluster deploy-cert-manager docker-build kind-load deploy e2e
@@ -26,7 +26,7 @@ make kind-cluster deploy-cert-manager docker-build kind-load deploy e2e
 ## How to write your own external issuer
 
 If you are writing an external issuer you may find it helpful to review the code and the commits in this repository
-and to follow the steps below, replacing references to `sample-external-issuer` with the name of your project.
+and to follow the steps below, replacing references to `alpha-external-issuer` with the name of your project.
 
 ### Prerequisites
 
@@ -66,8 +66,8 @@ We need a Git repository to track changes to the issuer code.
 You can start by creating a repository on GitHub or you can create it locally.
 
 ```console
-mkdir sample-external-issuer
-cd sample-external-issuer
+mkdir alpha-external-issuer
+cd alpha-external-issuer
 git init
 ```
 
@@ -76,7 +76,7 @@ git init
 A Go project needs a `go.mod` file which defines the root name of your Go packages.
 
 ```console
-go mod init github.com/cert-manager/sample-external-issuer
+go mod init github.com/cert-manager/alpha-external-issuer
 ```
 
 ### Initialise a Kubebuilder project
@@ -439,9 +439,9 @@ $ kubectl describe clusterissuers.sample-issuer.example.com clusterissuer-sample
 Events:
   Type     Reason            Age                From                    Message
   ----     ------            ----               ----                    -------
-  Normal   IssuerReconciler  13s                sample-external-issuer  First seen
-  Warning  IssuerReconciler  13s (x3 over 13s)  sample-external-issuer  Temporary error. Retrying: failed to get Secret containing Issuer credentials, secret name: sample-external-issuer-system/clusterissuer-sample-credentials, reason: Secret "clusterissuer-sample-credentials" not found
-  Normal   IssuerReconciler  13s (x3 over 13s)  sample-external-issuer  Success
+  Normal   IssuerReconciler  13s                alpha-external-issuer  First seen
+  Warning  IssuerReconciler  13s (x3 over 13s)  alpha-external-issuer  Temporary error. Retrying: failed to get Secret containing Issuer credentials, secret name: alpha-external-issuer-system/clusterissuer-sample-credentials, reason: Secret "clusterissuer-sample-credentials" not found
+  Normal   IssuerReconciler  13s (x3 over 13s)  alpha-external-issuer  Success
 ```
 And this:
 
@@ -451,9 +451,9 @@ $ kubectl describe certificaterequests.cert-manager.io issuer-sample
 Events:
   Type     Reason                        Age   From                    Message
   ----     ------                        ----  ----                    -------
-  Normal   CertificateRequestReconciler  23m   sample-external-issuer  Initialising Ready condition
-  Warning  CertificateRequestReconciler  23m   sample-external-issuer  Temporary error. Retrying: error getting issuer: Issuer.sample-issuer.example.com "issuer-sample" not found
-  Normal   CertificateRequestReconciler  23m   sample-external-issuer  Signed
+  Normal   CertificateRequestReconciler  23m   alpha-external-issuer  Initialising Ready condition
+  Warning  CertificateRequestReconciler  23m   alpha-external-issuer  Temporary error. Retrying: error getting issuer: Issuer.sample-issuer.example.com "issuer-sample" not found
+  Normal   CertificateRequestReconciler  23m   alpha-external-issuer  Signed
 
 ```
 
@@ -466,7 +466,7 @@ You can also write unit tests to verify the Reconciler events by using a [record
 
 [record.FakeRecorder]: https://pkg.go.dev/k8s.io/client-go/tools/record#FakeRecorder
 
-See [PR 10: Generate Kubernetes Events](https://github.com/cert-manager/sample-external-issuer/pull/10) for an example of how you might generate events in your issuer.
+See [PR 10: Generate Kubernetes Events](https://github.com/cert-manager/alpha-external-issuer/pull/10) for an example of how you might generate events in your issuer.
 
 ### End-to-end tests
 
@@ -496,7 +496,7 @@ make kind-cluster deploy-cert-manager
 
 # Wait for cert-manager to start...
 
-# Build and install sample-external-issuer and run the E2E tests.
+# Build and install alpha-external-issuer and run the E2E tests.
 # This step can be run iteratively when ever you make changes to the code or to the installation manifests.
 make docker-build kind-load deploy e2e
 ```
@@ -539,7 +539,7 @@ Here are some example values:
 
 Click the `Publish release` button to trigger the automated release process:
 
-* A Docker image will be generated and published to `ghcr.io/cert-manager/sample-external-issuer/controller` with the chosen tag.
+* A Docker image will be generated and published to `ghcr.io/cert-manager/alpha-external-issuer/controller` with the chosen tag.
 * An `install.yaml` file will be generated and attached to the release.
 
 ## Links
@@ -551,4 +551,4 @@ Click the `Publish release` button to trigger the automated release process:
 [Distroless Docker Image]: https://github.com/GoogleContainerTools/distroless
 [Configure a Security Context]: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 [kube-rbac-proxy]: https://github.com/brancz/kube-rbac-proxy
-[GitHub New Release Page]: https://github.com/cert-manager/sample-external-issuer/releases/new
+[GitHub New Release Page]: https://github.com/cert-manager/alpha-external-issuer/releases/new

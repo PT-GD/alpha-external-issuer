@@ -22,7 +22,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 
-	sampleissuerapi "github.com/cert-manager/sample-external-issuer/api/v1alpha1"
+	sampleissuerapi "github.com/cert-manager/alpha-external-issuer/api/v1alpha1"
 )
 
 func GetSpecAndStatus(issuer client.Object) (*sampleissuerapi.IssuerSpec, *sampleissuerapi.IssuerStatus, error) {
